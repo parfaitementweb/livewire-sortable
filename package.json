@@ -1,6 +1,6 @@
 {
   "main": "dist/livewire-sortable.js",
-  "name": "livewire-sortable",
+  "name": "parfaitementweb-livewire-sortable",
   "version": "1.1.0",
   "repository": {
     "type": "git",
