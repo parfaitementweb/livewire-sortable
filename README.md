@@ -8,7 +8,7 @@ This fork focuses on keeping the plugin alive and adding new features.
 
 ### NPM
 ```
-npm install livewire-sortable --save-dev
+npm install parfaitementweb-livewire-sortable --save-dev
 ```
 Import the package in your bundle:
 ```
