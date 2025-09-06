@@ -1,15 +1,10 @@
-# Livewire Sortable
+# Livewire Sortable (Fork)
 
-A plugin/wrapper around [Shopify's sortable package](https://github.com/Shopify/draggable/tree/master/src/Sortable). It makes implementing sortable interfaces super simple using Livewire.
+A plugin/wrapper around [Shopify's sortable package](https://github.com/Shopify/draggable/tree/master/src/Sortable). It makes implementing sortable interfaces super simple using Livewire.  
+
+This fork focuses on keeping the plugin alive and adding new features.
 
 ## Installation
-
-### CDN
-```html
-<script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v1.x.x/dist/livewire-sortable.js"></script>
-```
-
-> Note: this package only supports Livewire v3. If you are using v2, use version `0.3.0` of this package.
 
 ### NPM
 ```
@@ -71,6 +66,19 @@ For creating a nested layout with draggable groups with draggable items inside e
         <button>Add Task Group</button>
     </form>
 </div>
+```
+
+Enable the constrainDimensions option by adding `wire:sortable.constrainDimensions` and `wire:sortable-group.constrainDimensions` (if needed)
+
+```html
+<ul wire:sortable="updateTaskOrder" wire:sortable.constrainDimensions>
+    @foreach ($tasks as $task)
+        <li wire:sortable.item="{{ $task->id }}" wire:key="task-{{ $task->id }}">
+            <h4 wire:sortable.handle>{{ $task->title }}</h4>
+            <button wire:click="removeTask({{ $task->id }})">Remove</button>
+        </li>
+    @endforeach
+</ul>
 ```
 
 ## Styling
